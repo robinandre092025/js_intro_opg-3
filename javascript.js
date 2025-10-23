@@ -143,8 +143,8 @@ function diceRoller(numRolls, numSides = 6) {
   return rolledDice;
 }
 
-console.log(`Rolling 5 dice with 6 sides: ${diceRoller(5, 4)}`);
-console.log(`Rolling for initiative: ${diceRoller(1, 20)}`);
+console.log(`Rolling 5 dice with 6 sides:\n`, diceRoller(5, 4));
+console.log(`Rolling for initiative:\n`, diceRoller(1, 20));
 
 /******************************************************************************
 3.
@@ -187,7 +187,7 @@ function cleanText(arr) {
   return cleanedArr.join(" ");
 }
 
-console.log(cleanText(messyTextArr));
+console.log("Running cleanText(messyTextArr):\n", cleanText(messyTextArr));
 
 /******************************************************************************
 4.
@@ -218,7 +218,7 @@ function doubleSwap(string, charA, charB) {
   // Write the code for assignment 4 here
   let swappedString = "";
 
-  // This was my first thought process, but this wouuld first replace all of charA with charB
+  // This was my first thought process, but this would first replace all of charA with charB
   // then swap all previously replaced charA back to charA (because they are now charB), which is unintended.
   //
   // swappedString = string.replaceAll(charA, charB);
@@ -235,7 +235,6 @@ function doubleSwap(string, charA, charB) {
       swappedString += char;
     }
   }
-
   return swappedString;
 }
 
@@ -294,23 +293,20 @@ function helloChecker(str) {
     polish: "czesc",
   };
 
-  // String > split > strings[(1, 2, 3, 4)];
-
   const words = str.toLowerCase().split(" ");
 
   for (let word of words) {
     for (let key in hellos) {
       if (word.includes(hellos[key])) {
-        return `HELLO detected in ${key}`;
-      } else {
-        return `No HELLO detected.`;
+        return `HELLO detected in ${key.charAt(0).toUpperCase() + key.slice(1)}.`;
       }
     }
   }
+  return "No HELLO detected.";
 }
 
-console.log(helloChecker(greetings[1]));
+// console.log(helloChecker(greetings[1]));
 
-// for (let greeting of greetings) {
-//   console.log(helloChecker(greeting));
-// }
+for (let greeting of greetings) {
+  console.log(helloChecker(greeting));
+}
