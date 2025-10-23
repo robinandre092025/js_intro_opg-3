@@ -33,6 +33,9 @@ for everyone, and store it in the variable `averageAge`.
 Do the calculations AFTER adding two years to the age, and remember, skip Otto!
 
 ******************************************************************************/
+// Write the code for assignment 1 here
+
+console.log("%c--- LOOPS: Regular for loop ---", "color: yellow; font-weight: bold;");
 
 const cities = ["New York", "London", "Paris", "Berlin", "Copenhagen", "Rome"];
 
@@ -87,13 +90,16 @@ const people = [
   },
 ];
 
+console.log(`DECLARE arr cities:\n`, cities);
+console.log(`DECLARE arr people:\n`, people);
+
 let combinedAge = 0;
 let averageAge = 0;
 
-// Write the code for assignment 1 here
-
+console.log(`Starting loop to update people array...`);
 for (let i = 0; i < people.length; i++) {
   if (people[i].name.toLowerCase() === "otto") {
+    console.log(`Skipping Otto...`);
     continue;
   }
 
@@ -105,9 +111,11 @@ for (let i = 0; i < people.length; i++) {
   combinedAge += people[i].age;
 }
 
+// Calculate average age
 averageAge = combinedAge / people.length;
 
-console.log(people);
+console.log("Updated people array:\n", people);
+
 console.log(`Average age: ${averageAge}`);
 
 /******************************************************************************
@@ -129,8 +137,9 @@ Add a second parameter to the function that determines how many sides the die sh
 diceRoller(5, 20) should return an array with 5 random numbers from 1-20.
 
 ******************************************************************************/
-
 // Write the code for assignment 2 here
+
+console.log("%c--- LOOPS: diceRoller function ---", "color: yellow; font-weight: bold;");
 
 function diceRoller(numRolls, numSides = 6) {
   let rolledDice = [];
@@ -170,10 +179,12 @@ should return:
 "this text needs to be cleaned up"
 
 ******************************************************************************/
-
 // Write the code for assignment 3 here
 
+console.log("%c--- LOOPS: for..of ---", "color: yellow; font-weight: bold;");
+
 let messyTextArr = [" thIS", "teXt  ", " nEeds ", "to", "BE", "cleANED   ", " Up"];
+console.log("DECLARE arr messyTextArr:\n", messyTextArr);
 
 function cleanText(arr) {
   let cleanedArr = [];
@@ -213,9 +224,11 @@ doubleSwap("what is the point of this?", "o", "t")
 should return "whao is ohe ptino tf ohis?"
 
 ******************************************************************************/
+// Write the code for assignment 4 here
+
+console.log("%c--- LOOPS: doubleSwap function ---", "color: yellow; font-weight: bold;");
 
 function doubleSwap(string, charA, charB) {
-  // Write the code for assignment 4 here
   let swappedString = "";
 
   // This was my first thought process, but this would first replace all of charA with charB
@@ -238,7 +251,13 @@ function doubleSwap(string, charA, charB) {
   return swappedString;
 }
 
-console.log(doubleSwap("Heisann alle sammen!", "a", "e"));
+console.log(
+  `Running doubleSwap() with "Heisann alle sammen!":\n ${doubleSwap(
+    "Heisann alle sammen!",
+    "a",
+    "e"
+  )}`
+);
 /******************************************************************************
 5.
 
@@ -269,6 +288,9 @@ PS: Make sure the function is case-insensitive; both "Hello" and "hello" should 
 I have added some test variables to check your function.
 
 ******************************************************************************/
+// Write the code for assignment 5 here
+
+console.log("%c--- EXTRA: helloChecker function ---", "color: yellow; font-weight: bold;");
 
 const greetings = [
   "Hello, how are you today?",
@@ -280,8 +302,6 @@ const greetings = [
   "Ona pomachała i powiedziała cześć z uśmiechem.",
   "Good afternoon gentlemen!",
 ];
-
-// Write the code for assignment 5 here
 
 function helloChecker(str) {
   const hellos = {
@@ -307,6 +327,7 @@ function helloChecker(str) {
 
 // console.log(helloChecker(greetings[1]));
 
+console.log("Running helloChecker on greetings array:");
 for (let greeting of greetings) {
   console.log(helloChecker(greeting));
 }
